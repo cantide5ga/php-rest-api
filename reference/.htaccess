@@ -1,0 +1,5 @@
+# http://httpd.apache.org/docs/2.0/mod/mod_rewrite.html#rewritecond
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/v1/([^/]+)/(.*)$ api/v1/handler.php?rsrc=$1&path=$2 [QSA,NC,L]
